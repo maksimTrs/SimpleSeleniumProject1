@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.jupiter.api.Assertions;
 import setupdata.User;
 import setupdata.UserBuilder;
 import org.junit.jupiter.api.Disabled;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.base.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -75,6 +77,34 @@ public class DraftTest1 extends BaseTest {
         if (!ss.isEmpty() && !shadowText.isEmpty()) searchField.clear();
 
         searchField.sendKeys("Selenium");
+
+        System.out.println(searchField.getCssValue("color"));
+        System.out.println(searchField.getAttribute("color"));
+        System.out.println(searchField.getCssValue("maxlength"));
+        System.out.println(searchField.getAttribute("maxlength"));
+        System.out.println(searchField.getCssValue("appearance"));
+        System.out.println(searchField.getAttribute("appearance"));
+        System.out.println(searchField.getCssValue("size"));
+        System.out.println(searchField.getAttribute("size"));
+        System.out.println(searchField.getAttribute("innerHTML"));
+        System.out.println(searchField.getAttribute("outerHTML"));
+
+        String outerHTML = searchField.getAttribute("outerHTML");
+       final String[] outerHTML1 = outerHTML.split("<|>");
+        System.out.println(Arrays.toString(outerHTML1));
+        String styleResult = "";
+
+        for (String ssss:
+             outerHTML1) {
+           final String[] itemInfo = ssss.split(" ");
+            for (String zz : itemInfo) {
+                if (zz.contains("role"))
+                styleResult += zz;
+            }
+        }
+        System.out.println(styleResult);
+
+        Assertions.assertEquals(styleResult, "role=\"combobox\"");
 
 
        // Thread.sleep(2000);
