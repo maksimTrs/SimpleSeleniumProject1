@@ -1,9 +1,9 @@
-package tests.mobile_phone_refill_test.positive;
+package tests.telecomunications.positive;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
 import pages.base.MainPage;
-import pages.mobile_phone_refill.MobilePhoneRefill;
+import pages.telecomunications.MobilePhoneRefillPage;
 import tests.base.BaseTest;
 import static org.assertj.core.api.Assertions.*;
 
@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class MobileLoginWidgetPageTitleTest  extends BaseTest {
 
     private MainPage mainPage;
-    private MobilePhoneRefill mobilePhoneRefill;
+    private MobilePhoneRefillPage mobilePhoneRefillPage;
     private static final String PAGE_TITLE = "Top-up of the cell phone with the bank card online — Privat24";
     private static final String PAGE_HEADER = "Top-up";
 
@@ -25,14 +25,14 @@ public class MobileLoginWidgetPageTitleTest  extends BaseTest {
     @Description("TEST: Check Page Title name in Browser Tab and Page Header name")
     public void mobileLoginWidgetPageTitleTest() {
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
-        gotToUrl("https://next.privat24.ua/?lang=en");
+        gotToUrl(siteUrl);
         mainPage.mobilePhoneRefillMovement();
 
-        assertThat(mobilePhoneRefill.getPageTitle()).as("Wrong title page name = '%s'",mobilePhoneRefill.getPageTitle())
+        assertThat(mobilePhoneRefillPage.getPageTitle()).as("Wrong title page name = '%s'", mobilePhoneRefillPage.getPageTitle())
                 .isEqualToIgnoringCase(PAGE_TITLE);
- /*       assertThat(mobilePhoneRefill.getPageHeader()).as("Wrong header page name = '%s'",mobilePhoneRefill.getPageHeader())
+ /*       assertThat(mobilePhoneRefillPage.getPageHeader()).as("Wrong header page name = '%s'",mobilePhoneRefillPage.getPageHeader())
                 .isEqualToIgnoringCase(PAGE_HEADER);*/
 
        // attachScreenshot();

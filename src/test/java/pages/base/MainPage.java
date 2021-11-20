@@ -1,12 +1,10 @@
 package pages.base;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.mobile_phone_refill.MobilePhoneRefill;
-
-import java.time.Duration;
+import pages.loanfacilities.CarLoansPage;
+import pages.telecomunications.MobilePhoneRefillPage;
 
 public class MainPage extends BasePage{
 
@@ -26,8 +24,18 @@ public class MainPage extends BasePage{
     private WebElement pageHeaderTitle;
 
 
+    @FindBy(css = "div[data-qa-value='credits']")
+    private WebElement loanFacilities;
 
-    public MobilePhoneRefill mobilePhoneRefillMovement() {
+    @FindBy(xpath = "//div[@data-qa-value='auto_credit']/a")
+    private WebElement carLeasing;
+
+    @FindBy(xpath = "//div[text() = 'Car leasing']")
+    private WebElement pageHeaderTitleCarLoans;
+
+
+
+    public MobilePhoneRefillPage mobilePhoneRefillMovement() {
          webDriverWait.until(ExpectedConditions.elementToBeClickable(teleCommunications));
            /* action.moveToElement(teleCommunications)
                     .click()
@@ -36,6 +44,18 @@ public class MainPage extends BasePage{
         webDriverWait.until(ExpectedConditions.elementToBeClickable(mobileTopUp));
         mobileTopUp.click();
         webDriverWait.until(ExpectedConditions.visibilityOf(pageHeaderTitle));
-        return new MobilePhoneRefill();
+        return new MobilePhoneRefillPage();
+    }
+
+    public CarLoansPage сarLoansMovement() {
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(loanFacilities));
+           /* action.moveToElement(teleCommunications)
+                    .click()
+                    .moveToElement(mobileTopUp).click().build().perform();*/
+        loanFacilities.click();
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(carLeasing));
+        carLeasing.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(pageHeaderTitleCarLoans));
+        return new CarLoansPage();
     }
 }

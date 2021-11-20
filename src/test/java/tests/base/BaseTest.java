@@ -1,31 +1,21 @@
 package tests.base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import io.qameta.allure.Attachment;
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.BeforeAllCallback;
-import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import pages.base.BasePage;
-import pages.car_loans.CarLoansPage;
 import setupdata.Browsers;
 import setupdata.HeadlessBrowsers;
 import setupdata.ScreenShotActions;
 
-import java.sql.DriverManager;
+import static constants.ProjectConstants.*;
 
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class BaseTest {
 
     protected static WebDriver driver;
-    protected CarLoansPage carLoansPage;
 
     public static WebDriver getDriver() {
         return driver;
@@ -35,9 +25,11 @@ public abstract class BaseTest {
         driver.get(url);
     }
 
- /*   @BeforeAll
+      public String siteUrl = SITE_URL;
+
+  /*  @BeforeAll
     static void beforeAll() {
-         https://next.privat24.ua/?lang=en
+          String SITE_URL = "https://next.privat24.ua/?lang=en";
     }*/
 
     @BeforeEach

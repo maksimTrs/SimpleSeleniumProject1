@@ -1,18 +1,14 @@
-package pages.mobile_phone_refill;
+package pages.telecomunications;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base.BasePage;
-import pages.base.MainPage;
 
-import java.util.List;
-
-public class MobilePhoneRefill extends BasePage {
+public class MobilePhoneRefillPage extends BasePage {
 //https://next.privat24.ua/mobile   342342342   Top-up of the cell phone with the bank card online  — Privat24
 
-    public MobilePhoneRefill() {
+    public MobilePhoneRefillPage() {
         super();
     }
 
@@ -52,12 +48,12 @@ public class MobilePhoneRefill extends BasePage {
     }
 
 
-    public MobilePhoneRefill openMyWalletWidgetFrame() {
+    public MobilePhoneRefillPage openMyWalletWidgetFrame() {
         myWalletButton.click();
         return this;
     }
 
-    public MobilePhoneRefill switchToMyWalletWidgetFrame() {
+    public MobilePhoneRefillPage switchToMyWalletWidgetFrame() {
         webDriverWait.until(ExpectedConditions.visibilityOf(loginWidget));
         driver.switchTo().frame(loginWidget);
         return  this;

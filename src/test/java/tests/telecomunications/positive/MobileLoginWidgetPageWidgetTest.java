@@ -1,35 +1,32 @@
-package tests.mobile_phone_refill_test.positive;
+package tests.telecomunications.positive;
 
 import io.qameta.allure.*;
-import org.assertj.core.api.Assert;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.base.MainPage;
-import pages.mobile_phone_refill.MobilePhoneRefill;
+import pages.telecomunications.MobilePhoneRefillPage;
 import tests.base.BaseTest;
 
 import static org.assertj.core.api.Assertions.*;
-import static tests.base.BaseTest.gotToUrl;
 
 public class MobileLoginWidgetPageWidgetTest extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(MobileLoginWidgetPageWidgetTest.class);
 
     private MainPage mainPage;
-    private MobilePhoneRefill mobilePhoneRefill;
+    private MobilePhoneRefillPage mobilePhoneRefillPage;
     private static final String H2_WIDGET_HEADER = "Login to Privat24";
-    private static final String SITE_URL = "https://next.privat24.ua/?lang=en";
+   // private static final String SITE_URL = "https://next.privat24.ua/?lang=en";
     private static final String APPSTORE_LINK = "https://apps.apple.com/us/app/privat24-opened-to-everyone/id1333984846?l=ru&ls=1";
     private static final String PLAYMARKET_LINK = "https://play.google.com/store/apps/details?id=ua.privatbank.ap24";
 
 
     private  void initiateMobilePage() {
-        gotToUrl(SITE_URL);
+        gotToUrl(siteUrl);
         mainPage.mobilePhoneRefillMovement();
 
-        mobilePhoneRefill.openMyWalletWidgetFrame()
+        mobilePhoneRefillPage.openMyWalletWidgetFrame()
                 .switchToMyWalletWidgetFrame();
     }
 
@@ -43,13 +40,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetH2HeaderTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_H2_Header has value on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetHeaderName()));
+        logger.info(String.format("Widget_H2_Header has value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetHeaderName()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetHeaderName())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetHeaderName())
                 .as("Wrong widget name. Should be '%s'", H2_WIDGET_HEADER)
                 .isEqualTo(H2_WIDGET_HEADER);
 
@@ -66,13 +63,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetContinueButtonTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_Continue_Button is clickable on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetButton()));
+        logger.info(String.format("Widget_Continue_Button is clickable on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetButton()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetButton())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetButton())
                 .as("Continue Button is inactive!")
                 .isTrue();
 
@@ -89,13 +86,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetQRCodeTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_QR_Code is displayed on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetQRCode()));
+        logger.info(String.format("Widget_QR_Code is displayed on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetQRCode()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetQRCode())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetQRCode())
                 .as("QR CODE is inactive!")
                 .isTrue();
 
@@ -112,13 +109,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetAppStoreLinkTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
        initiateMobilePage();
 
-        logger.info(String.format("Widget_AppStore_Link has value on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetAppStoreLink()));
+        logger.info(String.format("Widget_AppStore_Link has value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetAppStoreLink()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetAppStoreLink())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetAppStoreLink())
                 .as("Wrong Widget AppStoreLink!")
                 .isEqualTo(APPSTORE_LINK);
 
@@ -135,13 +132,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetPlayMarketLinkTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_PlayMarket_Link has value on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetPlayMarketLink()));
+        logger.info(String.format("Widget_PlayMarket_Link has value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetPlayMarketLink()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetPlayMarketLink())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetPlayMarketLink())
                 .as("Wrong Widget PlayMarketLink!")
                 .isEqualTo(PLAYMARKET_LINK);
 
@@ -158,13 +155,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void mobileLoginWidgetPhoneNumberCodeTest() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_PhoneNumberCode has default value on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetPhoneNumberCode()));
+        logger.info(String.format("Widget_PhoneNumberCode has default value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetPhoneNumberCode()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetPhoneNumberCode())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetPhoneNumberCode())
                 .as("Wrong default phone code!")
                 .matches(p -> p.startsWith("UA+") && p.endsWith("380"), "should be: UA+380")
                 .isNotBlank();
@@ -182,13 +179,13 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     public void checkMyWalletWidgetPhoneNumberField() {
 
         mainPage = new MainPage();
-        mobilePhoneRefill = new MobilePhoneRefill();
+        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
-        logger.info(String.format("Widget_PhoneNumberField has default <empty> value on the site = '%s'.", mobilePhoneRefill.checkMyWalletWidgetPhoneNumberField()));
+        logger.info(String.format("Widget_PhoneNumberField has default <empty> value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetPhoneNumberField()));
 
-        assertThat(mobilePhoneRefill.checkMyWalletWidgetPhoneNumberField())
+        assertThat(mobilePhoneRefillPage.checkMyWalletWidgetPhoneNumberField())
                 .isBlank();
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
