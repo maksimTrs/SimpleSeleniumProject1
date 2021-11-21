@@ -14,8 +14,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(MobileLoginWidgetPageWidgetTest.class);
 
-    private MainPage mainPage;
-    private MobilePhoneRefillPage mobilePhoneRefillPage;
+
     private static final String H2_WIDGET_HEADER = "Login to Privat24";
    // private static final String SITE_URL = "https://next.privat24.ua/?lang=en";
     private static final String APPSTORE_LINK = "https://apps.apple.com/us/app/privat24-opened-to-everyone/id1333984846?l=ru&ls=1";
@@ -39,8 +38,6 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget Header")
     public void mobileLoginWidgetH2HeaderTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
 
         initiateMobilePage();
 
@@ -62,8 +59,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget Continue Button")
     public void mobileLoginWidgetContinueButtonTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
         initiateMobilePage();
 
@@ -85,8 +81,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget QR Code")
     public void mobileLoginWidgetQRCodeTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
         initiateMobilePage();
 
@@ -108,8 +103,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget App Store Link")
     public void mobileLoginWidgetAppStoreLinkTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
        initiateMobilePage();
 
@@ -131,9 +125,6 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget Play Market Link")
     public void mobileLoginWidgetPlayMarketLinkTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
-
         initiateMobilePage();
 
         logger.info(String.format("Widget_PlayMarket_Link has value on the site = '%s'.", mobilePhoneRefillPage.checkMyWalletWidgetPlayMarketLink()));
@@ -154,8 +145,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget Phone Number Code")
     public void mobileLoginWidgetPhoneNumberCodeTest() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
         initiateMobilePage();
 
@@ -178,8 +168,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
     @Description("Test: Open  mobile page and check Widget Phone Number Field")
     public void checkMyWalletWidgetPhoneNumberField() {
 
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
         initiateMobilePage();
 

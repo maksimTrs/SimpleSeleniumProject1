@@ -1,5 +1,6 @@
 package pages.telecomunications;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,11 +8,11 @@ import pages.base.BasePage;
 
 public class MobilePhoneRefillPage extends BasePage {
 //https://next.privat24.ua/mobile   342342342   Top-up of the cell phone with the bank card online  — Privat24
+    // protected  WebDriver driver;
 
-    public MobilePhoneRefillPage() {
-        super();
+    public MobilePhoneRefillPage(WebDriver driver) {
+        super(driver);
     }
-
 
 
     @FindBy(css = "div[data-qa-node='debitSourceSource']")
@@ -41,6 +42,7 @@ public class MobilePhoneRefillPage extends BasePage {
 
     @FindBy(css = "input[data-qa-node='login-number']")
     private WebElement loginWidgetPhoneNumberField;
+
 
 
     public String getPageTitle() {

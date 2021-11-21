@@ -1,19 +1,19 @@
 package pages.loanfacilities;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.base.BasePage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CarLoansPage extends BasePage {
+  //  protected WebDriver driver;
 
-    public CarLoansPage() {
-        super();
+    public CarLoansPage(WebDriver driver) {
+       super(driver);
     }
 
     @FindBy(xpath = "//a[contains(@href, 'auto-credit/my')]")
@@ -72,6 +72,8 @@ public class CarLoansPage extends BasePage {
 
     @FindBys(@FindBy(xpath = "//div[contains(@class, 'marginTop2_')]//div[contains(@class, 'content_')]/div"))
     private List<WebElement> listOfFAQElements;
+
+
 
 
     public String getPageUrl() {

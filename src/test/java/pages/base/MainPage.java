@@ -1,5 +1,6 @@
 package pages.base;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,17 +8,17 @@ import pages.loanfacilities.CarLoansPage;
 import pages.telecomunications.MobilePhoneRefillPage;
 
 public class MainPage extends BasePage{
+        protected WebDriver driver;
 
 
-
-    public MainPage() {
-        super();
+    public MainPage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(css = "div[data-qa-value='communications']")
     private WebElement teleCommunications;
 
-    @FindBy(css = "div[data-qa-value='pay_mob']")
+    @FindBy(xpath = "//div[@data-qa-value='pay_mob']")
     private WebElement mobileTopUp;
 
     @FindBy(xpath = "//div[text() = 'Top-up']")
@@ -35,19 +36,18 @@ public class MainPage extends BasePage{
 
 
 
-    public MobilePhoneRefillPage mobilePhoneRefillMovement() {
+    public void mobilePhoneRefillMovement() {
          webDriverWait.until(ExpectedConditions.elementToBeClickable(teleCommunications));
            /* action.moveToElement(teleCommunications)
                     .click()
                     .moveToElement(mobileTopUp).click().build().perform();*/
         teleCommunications.click();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(mobileTopUp));
+        webDriverWait.until(ExpectedConditions.visibilityOf(mobileTopUp));
         mobileTopUp.click();
         webDriverWait.until(ExpectedConditions.visibilityOf(pageHeaderTitle));
-        return new MobilePhoneRefillPage();
     }
 
-    public CarLoansPage сarLoansMovement() {
+    public void сarLoansMovement() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(loanFacilities));
            /* action.moveToElement(teleCommunications)
                     .click()
@@ -56,6 +56,5 @@ public class MainPage extends BasePage{
         webDriverWait.until(ExpectedConditions.elementToBeClickable(carLeasing));
         carLeasing.click();
         webDriverWait.until(ExpectedConditions.visibilityOf(pageHeaderTitleCarLoans));
-        return new CarLoansPage();
     }
 }

@@ -16,8 +16,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
 
     private static final Logger logger = LoggerFactory.getLogger(CarLoansBasePageFunctionalityTest.class);
 
-    private MainPage mainPage;
-    private CarLoansPage carLoansPage;
+
     private final String FAQ_LAST_QUESTION = "Can the bank increase the interest rate by leasing?";
     private final String CAR_CREDIT_LINK = "https://pb.ua/avto";
 
@@ -34,8 +33,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
     @Severity(SeverityLevel.NORMAL)
     @Description("TEST: Check FAQ Header and FAQ questions")
     public void carLoansFAQSectionTest() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
+
         SoftAssertions softly = new SoftAssertions();
 
         logger.info("Test was started for {} test class", CarLoansGeneralTest.class.getSimpleName().toUpperCase());
@@ -68,8 +66,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
     @Severity(SeverityLevel.NORMAL)
     @Description("TEST: Check Car price/Your prepayment/Monthly payment calculation")
     public void carLoansCalculatorTest() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
+
         SoftAssertions softly = new SoftAssertions();
 
         logger.info("Test was started for {} test class", CarLoansGeneralTest.class.getSimpleName().toUpperCase());
@@ -113,8 +110,6 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
     @Severity(SeverityLevel.NORMAL)
     @Description("TEST: Open  auto-credit/order page anc check pb.ua/avto link")
     public void checkCarCreditLink() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
 
 
         logger.info("Test was started for {} test class", CarLoansGeneralTest.class.getSimpleName().toUpperCase());

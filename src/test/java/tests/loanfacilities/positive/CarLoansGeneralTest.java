@@ -2,6 +2,8 @@ package tests.loanfacilities.positive;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.base.MainPage;
@@ -14,17 +16,22 @@ import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+//@Execution(ExecutionMode.CONCURRENT)
 public class CarLoansGeneralTest extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(CarLoansGeneralTest.class);
 
-    private MainPage mainPage;
-    private CarLoansPage carLoansPage;
+
     private static final String PAGE_TITLE = "You live Online-Bank";
     private static final String PAGE_URL = "https://next.privat24.ua/auto-credit/order";
     private static final String AGREEMENTS_TAB = "Agreements";
     private static final String ORDERS_TAB = "Order";
     private static final String HEADER_TABS = "Can't afford a car? The car in installments will make this purchase available!";
+
+    private void startPage() {
+        gotToUrl(siteUrl);
+        mainPage.сarLoansMovement();
+    }
 
 
 
@@ -35,13 +42,11 @@ public class CarLoansGeneralTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("TEST: Check Page Title name in Browser Tab and Page URL")
     public void carLoansPageTitleUrlTest() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
+
 
         logger.info("Test was started for {} test class", CarLoansGeneralTest.class.getSimpleName().toUpperCase());
 
-        gotToUrl(siteUrl);
-        mainPage.сarLoansMovement();
+       startPage();
 
         assertThat(carLoansPage.getPageTitle()).as("Wrong title page name = '%s'", carLoansPage.getPageTitle())
                 .isEqualToIgnoringCase(PAGE_TITLE);
@@ -61,11 +66,9 @@ public class CarLoansGeneralTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Description("TEST: Check Page Title name in Browser Tab and Page Header name")
     public void carLoansPageTabsTest() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
 
-        gotToUrl(siteUrl);
-        mainPage.сarLoansMovement();
+
+       startPage();
 
         assertThat(carLoansPage.checkAgreementsTab()).as("Wrong tab page name = '%s'", carLoansPage.checkAgreementsTab())
                 .isEqualToIgnoringCase(AGREEMENTS_TAB);

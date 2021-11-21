@@ -14,8 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CarLeasingNegativeTest extends BaseTest {
     private static final Logger logger = LoggerFactory.getLogger(CarLoansGeneralTest.class);
 
-    private MainPage mainPage;
-    private CarLoansPage carLoansPage;
+
     private String submitError = "Incorrect value was entered";
 
     @Test
@@ -25,8 +24,6 @@ public class CarLeasingNegativeTest extends BaseTest {
     @Severity(SeverityLevel.MINOR)
     @Description("TEST: Submit car credit with empty phone field")
     public void carLoansPageTitleUrlTest() {
-        mainPage = new MainPage();
-        carLoansPage = new CarLoansPage();
 
 
         logger.info("Test was started for {} test class", CarLoansGeneralTest.class.getSimpleName().toUpperCase());

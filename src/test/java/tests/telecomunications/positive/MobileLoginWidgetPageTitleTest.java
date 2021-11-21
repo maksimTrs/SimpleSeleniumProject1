@@ -10,8 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class MobileLoginWidgetPageTitleTest  extends BaseTest {
 
-    private MainPage mainPage;
-    private MobilePhoneRefillPage mobilePhoneRefillPage;
+
     private static final String PAGE_TITLE = "Top-up of the cell phone with the bank card online — Privat24";
     private static final String PAGE_HEADER = "Top-up";
 
@@ -24,8 +23,7 @@ public class MobileLoginWidgetPageTitleTest  extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Description("TEST: Check Page Title name in Browser Tab and Page Header name")
     public void mobileLoginWidgetPageTitleTest() {
-        mainPage = new MainPage();
-        mobilePhoneRefillPage = new MobilePhoneRefillPage();
+
 
         gotToUrl(siteUrl);
         mainPage.mobilePhoneRefillMovement();

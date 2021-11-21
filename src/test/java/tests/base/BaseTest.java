@@ -2,26 +2,33 @@ package tests.base;
 
 import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import pages.base.BasePage;
+import pages.base.MainPage;
+import pages.loanfacilities.CarLoansPage;
+import pages.telecomunications.MobilePhoneRefillPage;
 import setupdata.Browsers;
 import setupdata.HeadlessBrowsers;
 import setupdata.ScreenShotActions;
 
 import static constants.ProjectConstants.*;
 
-
+@Execution(ExecutionMode.CONCURRENT)
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public abstract class BaseTest {
+public  class BaseTest {
 
-    protected static WebDriver driver;
+    protected  WebDriver driver;
+    protected BasePage basePage;
+    protected CarLoansPage carLoansPage;
+    protected MobilePhoneRefillPage mobilePhoneRefillPage;
+    protected MainPage mainPage;
 
-    public static WebDriver getDriver() {
-        return driver;
-    }
 
-    public  static void gotToUrl(String url) {
+    public   void gotToUrl(String url) {
         driver.get(url);
     }
 
@@ -43,6 +50,10 @@ public abstract class BaseTest {
             driver = Browsers.CHROME.createBrowserInstance();
             driver.manage().window().maximize();
         }
+        basePage = new BasePage(driver);
+        carLoansPage = new CarLoansPage(driver);
+        mobilePhoneRefillPage = new MobilePhoneRefillPage(driver);
+        mainPage = new MainPage(driver);
        // driver.get("https://next.privat24.ua/?lang=en");
     }
 
@@ -52,7 +63,7 @@ public abstract class BaseTest {
     }*/
 
     @Attachment(value = "Page Screenshot", type = "image/png")
-    public static byte[] saveScreenshotPNG() {
+    public  byte[] saveScreenshotPNG() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
