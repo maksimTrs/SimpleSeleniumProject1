@@ -34,7 +34,7 @@ public class MobileLoginWidgetPageTitleTest  extends BaseTest {
                 .isEqualToIgnoringCase(PAGE_HEADER);*/
 
        // attachScreenshot();
-        saveScreenshotPNG();
+       // saveScreenshotPNG();
 
     }
 }

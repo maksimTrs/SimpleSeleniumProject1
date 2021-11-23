@@ -15,6 +15,8 @@ import java.util.TimeZone;
 import static constants.ProjectConstants.FILE_PATH;
 import static constants.ProjectConstants.TIME_ZONE;
 
+
+// Deprecated !
 public class ScreenShotActions {
 
     public static void screenShotSaver(WebDriver driver) {

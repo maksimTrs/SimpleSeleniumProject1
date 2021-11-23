@@ -58,8 +58,8 @@
                         </property>
                         <property>
                             <name>allure.results.directory</name>
-                           <!-- <value>${project.build.directory}/allure-results</value>-->
-                            <value>target/allure-results</value>
+                            <value>${project.build.directory}/allure-results</value>
+                           <!-- <value>target/allure-results</value>-->
                         </property>
                        <!-- <reportDirectory>allure-report</reportDirectory>-->
                     </systemProperties>
@@ -117,6 +117,12 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>2.13.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

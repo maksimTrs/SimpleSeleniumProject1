@@ -1,17 +1,27 @@
 package tests.loanfacilities.negative;
 
 import io.qameta.allure.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.base.MainPage;
 import pages.loanfacilities.CarLoansPage;
 import tests.base.BaseTest;
+import tests.base.Listener;
+import org.junit.Rule;
 import tests.loanfacilities.positive.CarLoansGeneralTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+
 public class CarLeasingNegativeTest extends BaseTest {
+
+
     private static final Logger logger = LoggerFactory.getLogger(CarLoansGeneralTest.class);
 
 
@@ -37,6 +47,6 @@ public class CarLeasingNegativeTest extends BaseTest {
 
         logger.info("Test was finished for {}  page", carLoansPage.getPageUrl());
 
-        saveScreenshotPNG();
+        //saveScreenshotPNG();
     }
 }

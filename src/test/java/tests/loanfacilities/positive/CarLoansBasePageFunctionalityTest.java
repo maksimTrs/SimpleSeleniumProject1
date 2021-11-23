@@ -54,7 +54,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
                 .isEqualTo(FAQ_LAST_QUESTION);
 
         softly.assertAll();
-        saveScreenshotPNG();
+        //saveScreenshotPNG();
 
         logger.info("Test was finished for {}  page", carLoansPage.getPageUrl());
     }
@@ -98,7 +98,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
 
 
         softly.assertAll();
-        saveScreenshotPNG();
+        //saveScreenshotPNG();
 
         logger.info("Test was finished for {}  page", carLoansPage.getPageUrl());
     }
@@ -119,7 +119,7 @@ public class CarLoansBasePageFunctionalityTest extends BaseTest {  //You live On
         assertThat(carLoansPage.checkAvtoVKreditLink())
                 .isEqualTo(CAR_CREDIT_LINK);
 
-        saveScreenshotPNG();
+      //  saveScreenshotPNG();
 
         logger.info("Test was finished for {}  page", carLoansPage.getPageUrl());
     }

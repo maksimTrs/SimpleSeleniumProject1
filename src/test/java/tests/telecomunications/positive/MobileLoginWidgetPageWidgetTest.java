@@ -48,7 +48,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isEqualTo(H2_WIDGET_HEADER);
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+      //  saveScreenshotPNG();
     }
 
     @Test
@@ -70,7 +70,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isTrue();
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+       // saveScreenshotPNG();
     }
 
     @Test
@@ -92,7 +92,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isTrue();
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+       // saveScreenshotPNG();
     }
 
     @Test
@@ -114,7 +114,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isEqualTo(APPSTORE_LINK);
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+      //  saveScreenshotPNG();
     }
 
     @Test
@@ -134,7 +134,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isEqualTo(PLAYMARKET_LINK);
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+      //  saveScreenshotPNG();
     }
 
     @Test
@@ -157,7 +157,7 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isNotBlank();
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+     //   saveScreenshotPNG();
     }
 
     @Test
@@ -178,6 +178,6 @@ public class MobileLoginWidgetPageWidgetTest extends BaseTest {
                 .isBlank();
 
         logger.info("Test was passed for {} test class", MobileLoginWidgetPageWidgetTest.class.getSimpleName().toUpperCase());
-        saveScreenshotPNG();
+       // saveScreenshotPNG();
     }
 }

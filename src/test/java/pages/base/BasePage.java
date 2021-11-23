@@ -16,10 +16,10 @@ public  class BasePage {
     protected Actions action;
 
     public BasePage(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
         webDriverWait = new WebDriverWait(driver, EXPLICITLY_WAIT);
         action = new Actions(driver);
+        this.driver = driver;
     }
 
  /*   public void gotToUrl(String url) {

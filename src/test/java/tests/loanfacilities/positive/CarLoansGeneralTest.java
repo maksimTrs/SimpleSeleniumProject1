@@ -56,7 +56,7 @@ public class CarLoansGeneralTest extends BaseTest {
 
         logger.info("Test was finished for {}  page", carLoansPage.getPageUrl());
 
-        saveScreenshotPNG();
+      //  saveScreenshotPNG();
     }
 
     @Test
@@ -79,7 +79,7 @@ public class CarLoansGeneralTest extends BaseTest {
         assertThat(carLoansPage.checkOrderTabHeader())
                 .isEqualToIgnoringCase(HEADER_TABS);
 
-        saveScreenshotPNG();
+     //   saveScreenshotPNG();
 
     }
 }
